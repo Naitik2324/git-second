@@ -1,0 +1,48 @@
+<html>
+    <head>
+    </head>
+    <body>
+        
+
+        <div>Length</div>
+        <p id="len"></p>
+
+        <div>Slice</div>
+        <p id="slice"></p>
+
+        <div>uppercase and lowercase</div>
+        <p id="case"></p>
+
+        <div>String to array by using Split</div>
+        <p id="arr"></p>
+
+        <div>Indexof method</div>
+        <p id="indexof"></p>
+
+        <script>
+            let str="abcdefghijklmnopqrstuvwxyz";
+            let len=str.length;
+            document.getElementById("len").innerHTML=len;
+
+            let fruit="apple,banana,kiwi,mango";
+            let substr=fruit.slice(2,20);
+            document.getElementById("slice").innerHTML=substr;
+
+            let my="I am naitik Bagia";
+            document.getElementById("case").innerHTML=my.toUpperCase();
+            document.getElementById("case").innerHTML=my.toLowerCase();
+
+            let string="I am working in digiqt and learning javascript";
+            const array=string.split(" ");
+            text='';
+            for(let i=0;i<array.length;i++)
+            {
+                text += array[i] 
+            }
+            document.getElementById("arr").innerHTML=array;
+
+            var text="Hey hello world";
+            document.getElementById("indexof").innerHTML=text.indexOf("hello");
+        </script>
+    </body>
+</html>
