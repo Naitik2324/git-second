@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BOM objects</title>
+    </head>
+    <body>
+        <h3>BOM Object</h3>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <button onclick='winopen()'>New window</button>
+
+        <script>
+            document.getElementById("demo1").innerHTML="Width "+window.innerWidth+"px<br>"
+            + "Height "+window.innerHeight+"px";
+
+            document.getElementById("demo2").innerHTML="Screen Width "+screen.width+"px<br>"
+            + "Screen Height "+screen.height+"px";
+
+            console.log("Location is : "+window.location);
+            const winopen = ()=>{window.open("https://www.w3schools.com/jsref/met_win_open.asp");};
+        </script>
+    </body>
+</html>
