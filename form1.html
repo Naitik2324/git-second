@@ -1,0 +1,44 @@
+<html>
+    <head></head>
+    <body>
+        <h4>Check wether input is betweeen 1 to 10</h4>
+        <input type="text" id="demo">
+        <button onclick="myFunction()">Check it</button>
+        <p id="p01"></p>
+
+        <script>
+
+            function myFunction()
+            {
+                var x=document.getElementById("demo").value;
+                try{
+                
+                if(x.trim()=="")
+                {
+                    document.getElementById("p01").innerHTML="Enter input";
+                }
+                if(isNaN(x))
+                {
+                    document.getElementById("p01").innerHTML="Its not a number";
+                }
+                x=Number(x);
+                if(x > 11)
+                {
+                    document.getElementById("p01").innerHTML="Greater then 10";
+                }
+                if(x < 0)
+                {
+                    document.getElementById("p01").innerHTML="Less then 1";
+                }
+                if(x >= 1 && x <= 10)
+                {
+                    document.getElementById("p01").innerHTML="Your Number is : "+x;
+                }
+            }
+            catch(err){
+                document.getElementById("p01"),innerHTML=err.mess;
+            }
+        }
+        </script>
+    </body>
+</html>
