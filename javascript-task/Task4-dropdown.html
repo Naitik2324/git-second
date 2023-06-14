@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Drop Down</title>
+    </head>
+    <body>
+        <label for="cities">Select the City</label>
+        <select id="cities">
+            <option value="Ahmedabad" selected>Ahmedabad</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Jodhpur">Jodhpur</option>
+        </select>
+
+        <label for="States">The City</label>
+        <select id="States">
+            <option value="Gujarat" selected>Gujarat</option>
+            <option value="Maharasthra">Maharasthra</option>
+            <option value="Rajasthan">Rajasthan</option>
+        </select>
+
+        <script>
+            document.getElementById("cities").addEventListener("change",()=>{
+                var x=document.getElementById("cities").selectedIndex;
+                //console.log(x);
+                document.getElementById("States").selectedIndex=x;
+            });
+            
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+    </head>
+    <body>
+        <input type="number" id="num1" required>
+        <input type="number" id="num2" required>
+        <button type="submit" onclick="add()"> ADD </button>
+        <button type="submit" onclick="sub()"> Sub </button>
+        <button type="submit" onclick="mul()"> Mul </button>
+        <button type="submit" onclick="divide()"> Div </button>
+        <p id="result"></p>
+
+        <script>
+            const add = () => {
+                let n1=Number(document.getElementById("num1").value);
+                let n2=Number(document.getElementById("num2").value);
+                let n3=n1+n2;
+                document.getElementById("result").innerHTML="Addition of "+n1 +" & "+n2 + " is : "+ n3; 
+            }
+
+            const sub = () => {
+                let n1=Number(document.getElementById("num1").value);
+                let n2=Number(document.getElementById("num2").value);
+                let n3=n1-n2;
+                document.getElementById("result").innerHTML="Subraction of "+n1 +" & "+n2 + " is : "+ n3; 
+            }
+
+            const mul = () => {
+                let n1=Number(document.getElementById("num1").value);
+                let n2=Number(document.getElementById("num2").value);
+                let n3=n1*n2;
+                document.getElementById("result").innerHTML="Multiplication of "+n1 +" & "+n2 + " is : "+ n3; 
+            }
+
+            const divide = () => {
+                let n1=Number(document.getElementById("num1").value);
+                let n2=Number(document.getElementById("num2").value);
+                let n3=n1/n2;
+                document.getElementById("result").innerHTML="Division of "+n1 +" & "+n2 + " is : "+ n3; 
+            }
+        </script>
+    </body>
+</html>

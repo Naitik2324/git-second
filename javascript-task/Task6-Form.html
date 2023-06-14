@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form</title>
+    </head>
+    <body onload="showdetails()">
+        <h3>Inquiry Form</h3> 
+        <div>
+            <label>Enter Your Name :</label><br>
+            <input type="text" placeholder="Enter your name" id="name"><br>
+            <label>Enter Email Address :</label><br>
+            <input type="email" placeholder="Enter your email" id="email"><br>
+            <label>Age :</label>
+            <button id="addbutton"> + </button> <input type="number" placeholder="Enter age" id="age"> <button id="subbutton"> - </button><br>
+            
+            
+            <label>Gender :</label>
+            <input type="radio" value="male" id="male" name="Gender"><label for="male">Male</label>  
+            <input type="radio" value="female" id="female" name="Gender" ><label for="female">Female</label> 
+            <input type="radio" value="other" id="other" name="Gender"><label for="other">other</label><br>
+
+            <label>Select Your Hobby :</label>
+            <input type="checkbox" name="Hobby" id="Travel" value="Travel"> <label>Travel</label>
+            <input type="checkbox" name="Hobby" id="Reading" value="Reading"> <label>Reading</label>
+            <input type="checkbox" name="Hobby" id="Sleeping" value="Sleeping"> <label>Sleeping</label><br>
+            
+            <label for="States">Select your State</label>
+            <select id="States" onchange="selectcity()">
+                <option value ="null" selected>Select State</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Maharasthra">Maharasthra</option>
+                <option value="Rajasthan">Rajasthan</option>
+            </select><br>
+            <label for="cities">Select your City :</label>
+            <select id="cities">
+                <option value=""></option>
+            </select><br>
+
+        </div>
+        <button onclick="check_validations()" id="submit" > Submit </button>
+        <button onclick="updatenewdata()" id="update" hidden> Update </button>
+        
+        <!-- Detail table -->
+        <h3>Your Details</h3>
+        <label for="search">Search : </label>
+        <input type="text" id="Search_value" placeholder="Search by name"></input>
+        <button onclick="show_all_data()" >Show all Data</button>
+        <hr>
+        <p id="no_data_found"></p>
+        <table border="2px solid black" id="data">
+            <thead>
+                <th>Name</th>
+           <th>Email</th>  
+           <th>Age</th> 
+           <th>Gender</th> 
+           <th>Hobbies</th>
+           <th>City</th>
+           <th>State</th>  
+           <th>Actions</th>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    <script src="Task6-Form.js"></script>
+    </body>
+</html>

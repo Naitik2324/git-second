@@ -1,0 +1,60 @@
+<html>
+    <head>Promises</head>
+    <body>
+        <script>
+            //let condition=false;
+            function prom(a,b){
+                var c= a / b;
+                return new Promise(function(resolve,reject){
+                if(a,b){
+                    resolve("Your answer is "+c);
+                }
+                else reject("Divsion not possible"); 
+                
+            });
+            }
+            const onfulfilment = (result) => {
+                console.log(result)
+            };
+            const onrejection = (error) => {
+                console.log(error)
+            };
+
+            prom(9,8).then(onfulfilment).catch(onrejection);
+
+           let p1 = new Promise((resolve, reject) =>{
+            setTimeout(() => {
+                console.log("First promise");
+                resolve(10);
+            },1000);
+           });
+
+           let p2 = new Promise((resolve, reject) =>{
+            setTimeout(() => {
+                console.log("Second promise");
+                resolve(10);
+            },2000);
+           });
+
+           let p3 = new Promise((resolve, reject) =>{
+            setTimeout(() => {
+                console.log("Third promise");
+                resolve(10);
+            },3000);
+           });
+           Promise.all([p1,p2,p3]).then((result) =>{
+                var total=0;
+                for (var i in result){
+                    total +=result[i];
+                }
+                console.log("Result is : "+result);
+                console.log("Sum is :"+total);
+           }).catch((error) => {
+                console.log(error);
+           });
+
+        </script>
+    </body>
+</html>
+
+

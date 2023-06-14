@@ -1,0 +1,96 @@
+<html>
+    <head></head>
+    <body>
+        <h3>Array</h3>
+        <p id="array1"></p>
+
+        <h3>To String method</h3>
+        <p id="tostring"></p>
+
+        <h3>Concat</h3>
+        <p id="concat"></p>
+
+        <h3>Sort numbers</h3>
+        <p id="sortnumber"></p>
+        <button onclick="alphasort()">Sort Alphabet vise</button>
+        <button onclick="numsort()">Sort number vise</button>
+
+        <h3>Find max and min</h3>
+        <p id="minmax"></p>
+        <button onclick='document.getElementById("minmax").innerHTML=max()'>Maximum</button>
+        <button onclick='document.getElementById("minmax").innerHTML=min()'>Minimum</button>
+
+        <h3>For Loop</h3>
+        <p id="forloop"></p>
+
+        <h3>For Each Loop</h3>
+        <p id="foreach"></p>
+
+        <script>
+            const array1=["iphone12","iphone13","iphone14"];
+            array1.push("iphone15");
+            document.getElementById("array1").innerHTML=array1;
+
+            //document.getElementById("tostring").innerHTML=array1.toString();
+            document.getElementById("tostring").innerHTML=array1.join("*");
+
+            const fruits=["apple","banana","kiwi"];
+            document.getElementById("concat").innerHTML=fruits.concat(array1);
+
+            const num=[1,23,5,24,3,7];
+            //document.getElementById("sortnumber").innerHTML=num.sort();
+
+            function alphasort()
+            {
+                document.getElementById("sortnumber").innerHTML=num.sort();
+            }
+            function numsort()
+            {
+                document.getElementById("sortnumber").innerHTML=num.sort(function(a,b){return a-b});
+            }
+
+            
+            function max()
+            {
+                var max=num[0];
+                for(let i=0;i<num.length;i++)
+                {
+                    if(max < num[i])
+                    {
+                        max=num[i];
+                    }
+                }
+                return max;
+            }
+
+            function min()
+            {
+                var min=num[0];
+                for(let i=0;i<num.length;i++)
+                {
+                    if(min > num[i])
+                    {
+                        min=num[i];
+                    }
+                }
+                return min;
+            }
+            
+            text="";
+            for(let i=0;i<fruits.length;i++)
+            {
+                text += fruits[i] +"<br>";
+            }
+            document.getElementById("forloop").innerHTML="Your array using for loop is : "+text;
+
+            text1="";
+            num.forEach((value,index)=>{
+                text1 += "index is : "+index +"value is : "+value +"<br>";
+            });
+            // function Foreach(value,index){
+            //     text+= value +"<br>";
+            // }
+            document.getElementById("foreach").innerHTML="Your array using foreach is : "+text1;
+        </script>
+    </body>
+</html>

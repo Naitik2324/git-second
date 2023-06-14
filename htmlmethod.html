@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            
+            function myfunction()
+            {
+                document.getElementById("demo").innerHTML="Naitik Bagia here...";
+            }
+            alert("Heyy mari prachu");
+            
+        </script>
+    </head>
+    <body>
+        <p id="demo">Hiiii</p>
+        <button onclick="myfunction()">Try it to change</button>
+
+        <div id="time">Time is</div>
+        <button onclick="document.getElementById('time').innerHTML=Date()">Time ?</button>
+
+        <p id="demo2"></p>
+
+        <p id="string">String are here</p>
+
+
+        <script>
+            const obj={
+                name :"naitik",
+                age :"20",
+                phone :"6352446953",
+                address :"south bopal",
+                details : function(){
+                    return this.name + " " + this.age +" "+ this.phone + " "+ this.address;
+                }
+            };
+            document.getElementById("demo2").innerHTML=obj.details();
+
+            let str="Heyy I am  \"Iron man\" from earth";
+            document.getElementById("string").innerHTML=str;
+        </script>
+    </body>
+</html>

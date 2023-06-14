@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Input</title>
+    </head>
+    <body>
+        
+        Enter Any Text : <input type="text" id="text"> 
+        <p id="txt"></p>
+        <script>
+            document.getElementById("text").addEventListener("input",() => {
+                var val=document.getElementById("text").value;
+                document.getElementById("txt").innerHTML = val;
+            });
+        </script>
+    </body>
+</html>

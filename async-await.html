@@ -1,0 +1,21 @@
+<script>
+    async function test(){
+        return "Hello";
+    }
+    //console.log(test());
+    test().then((result) => {
+        console.log(result);
+    })
+
+    async function test1(){
+        const response = await fetch("/file.json");
+        const data=response.json();
+        return data;
+    }
+
+    test1().then((result) => {
+        console.log(result);
+    }).catch((error) => {
+        console.log(error);
+    })
+</script>

@@ -1,0 +1,26 @@
+<html>
+    <head>Callbacks</head>
+    <body>
+        <h3>Callbacks function</h3>
+        <p id="demo"></p>
+
+        <script>
+            const arr=[1,-5,4,-10,3];
+
+            const positivearr=removeneg(arr, (x) => x >= 0);
+
+            document.getElementById("demo").innerHTML=positivearr;
+            
+            function removeneg(arr,callbacks)
+            {
+                const arr1=[];
+                for (const x of arr){
+                    if (callbacks(x)){
+                        arr1.push(x);
+                    }
+                }
+                return arr1;
+            }
+        </script>
+    </body>
+</html>

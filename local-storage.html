@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>local storage</title>
+    </head>
+    <body>
+        <h1>Local Storage</h1>
+        <script>
+            let myarr=['pizza','burger','frankie']
+            localStorage.setItem('Name','Naitik');
+            localStorage.setItem('Name2','Pankaj');
+            localStorage.setItem('foodie',JSON.stringify(myarr));
+
+            JSON.parse(localStorage.getItem('foodie'));
+        </script>
+    </body>
+</html>

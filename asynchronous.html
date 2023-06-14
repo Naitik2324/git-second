@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Asynchronous function</title>
+    </head>
+    <body>
+        <p id="demo"></p>
+        <p id="demo2"></p>
+        <script>
+
+            const myfunction= () => {
+                document.getElementById("demo").innerHTML="Heyyy its naitik bagia";
+            }
+            setTimeout(myfunction,2000);
+
+            const myfunction2= () => {
+                const d =new Date();
+                document.getElementById("demo2").innerHTML=
+                d.getHours()+ ":" +d.getMinutes()+ ":" + d.getSeconds();
+            }
+            setInterval(myfunction2,1000);
+        </script>
+    </body>
+</html>

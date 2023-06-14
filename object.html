@@ -1,0 +1,49 @@
+<html>
+    <head></head>
+    <body>
+        <h3>Object iterable</h3>
+        <p id="object"></p>
+
+        
+
+        <h3>Try and Catch</h3>
+        <p id="trycatch"></p>
+
+        <script>
+            const myDetails ={
+            my : [{firstname:"naitik",lastname:"bagia",age:"20"},
+            {firstname:"pankaj",lastname:"bagia",age:"41"}]
+            };
+
+            const arr =[{firstname:"naitik",lastname:"bagia",age:"20"},
+            {firstname:"pankaj",lastname:"bagia",age:"41"}];
+           
+            const data = arr.map((item,index)=>{
+                document.write(JSON.stringify(item));
+                return item;
+            })
+            //alert(data);
+
+            const data1 =arr.forEach((value,index)=>{
+                document.write(JSON.stringify(value));
+                return value;
+            })
+            console.log(data," ",data1);
+
+            var text="";
+            for(let i in myDetails.my)
+            {   
+               text +=  myDetails.my[i].firstname+"  "+myDetails.my[i].lastname+"  "+myDetails.my[i].age+"<br>";
+            }
+            document.getElementById("object").innerHTML=text;
+
+            // try{
+            //     addlert("Try and catch block");
+            // }
+            // catch(err){
+            //     document.getElementById("trycatch").innerHTML=err.message;
+            // }
+           
+        </script>
+    </body>
+</html>

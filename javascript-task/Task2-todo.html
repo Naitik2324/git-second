@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To-Do</title>
+    </head>
+    <body onload="load()">
+        <h3>To Do List</h3>
+        <input type="textarea" id="datainput" >
+        <button onclick="showlist()">Add List</button>
+        <ul id="items"></ul>
+       
+        <script>
+            
+            const arr=[];
+
+           
+
+            const showlist = () =>{
+
+                var items=document.getElementById("items");
+                var data=document.getElementById("datainput").value;
+                
+                
+                if(data.trim()==""){
+                    alert("Enter the data");
+                }
+                else
+                { 
+                    arr.push(data);
+                    localStorage.setItem("Lists",JSON.stringify(arr));
+                    
+                    
+
+                    let li = document.createElement("li");
+                    li.appendChild(document.createTextNode(data));
+                    items.appendChild(li);
+                    
+                    
+                    console.log(JSON.parse(localStorage.getItem('Lists')));
+
+                    console.log("arr "+arr);
+
+                    li.addEventListener('click',() => {
+                        alert("Deleting "+data);
+
+                        items.removeChild(li);
+                        var index= arr.indexOf(data);
+                        arr.splice(index,1);
+                        console.log("new arr "+arr);
+
+                        localStorage.setItem("Lists",JSON.stringify(arr));
+
+                        
+                        console.log("select index is "+ index + "data is "+data);
+
+                    });
+                  
+                }
+            }
+            //const keys = Object.keys(localStorage)
+            function load(){
+                for (const key in localStorage) {
+                    if (localStorage.hasOwnProperty(key)) {
+                        console.log(`${key}: ${localStorage.getItem(key)}`)
+                    }
+                    
+                }
+        } 
+        </script>
+    </body>
+</htm

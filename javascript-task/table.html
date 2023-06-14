@@ -1,0 +1,28 @@
+<!-- (A) ALL WE NEED IS AN EMPTY <TABLE> -->
+    <table id="wrap"></table>
+
+    <script>
+    // (B) ARRAY OF DATA
+    var data = ["alpaca", "birb", "cate", "doge"];
+    
+    // (C) CREATE HTML TABLE (2 CELLS PER ROW)
+    var table = "<tr>", perrow = 2;
+    data.forEach((value, i) => {
+      // (C1) "NORMAL" CELL
+      table += `<td>${value}</td>`;
+     
+      // (C2) CLICK ON CELL TO DO SOMETHING
+      // table += `<td onclick="FUNCTION()">${value}</td>`;
+     
+      // (C3) TO PASS IN A RUNNING NUMBER OR PARAMETER
+      // table += `<td onclick="FUNCTION(${i})">${value}</td>`;
+     
+      // (C4) BREAK INTO NEXT ROW
+      var next = i + 1;
+      if (next%perrow==0 && next!=data.length) { table += "</tr><tr>"; }
+    });
+    table += "</tr>";
+     
+    // (D) ATTACH TO EMPTY TABLE
+    document.getElementById("wrap").innerHTML = table;
+    </script>
